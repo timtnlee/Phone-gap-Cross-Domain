@@ -7,6 +7,7 @@
     * scripts only from the same origin and inline styles, and eval()
 -->
 <meta http-equiv="Content-Security-Policy" content="default-src * 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; 
+                                                    script-src * 'self' 'unsafe-inline' 'unsafe-eval'; 
                                                     style-src 'self' 'unsafe-inline'; 
                                                     media-src *; 
                                                     connect-src *">
@@ -17,6 +18,8 @@
                                                     connect-src *">
  -->
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
         <title>response test</title>
         <script src="jquery-1.11.3.js"></script>
         <script src="index.js"></script>
@@ -32,5 +35,17 @@
 		<button id='btn'>ajax post</button><br>
         <button location.href>href</button>
 		<p id='demo'></p>
+        <div id="app">
+        <p>{{ message }}</p>    
+        <input type="text" v-model='message'>
+    </div>
     </body>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: ''
+            }
+        })
+    </script>
 </html>

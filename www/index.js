@@ -12,7 +12,7 @@
                     },
                     error: function(xhr, status, error){
             
-                            alert('err');
+                            alert(error);
                         
                     }
                 })
